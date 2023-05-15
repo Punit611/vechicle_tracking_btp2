@@ -12,6 +12,7 @@ class Track(object):
         self.skipped_frames = 0  # number of frames skipped undetected
         self.trace = []  # trace path
         self.start_time = datetime.utcnow()
+        self.speed = 0
         self.passed = False
 
 
@@ -56,7 +57,7 @@ class Tracker(object):
         assignment = [-1 for _ in range(N)]
         # for _ in range(N):
         #     assignment.append(-1)
-        print(cost)
+        # print(cost)
         row_ind, col_ind = linear_sum_assignment(cost)
         for i in range(len(row_ind)):
             assignment[row_ind[i]] = col_ind[i]
